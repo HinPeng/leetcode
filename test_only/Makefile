@@ -18,7 +18,7 @@ LIBRARIES	:=
 all:	build
 build:	main
 
-main.o:std_function_test.cc
+main.o:1.cc
 	$(CXX) $(INCLUDES) $(CCFLAGS) -o $@ -c $<
 main:main.o
 	$(CXX) $(LDFLAGS) -o $@ $+ $(LIBRARIES)
