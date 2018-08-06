@@ -1,6 +1,6 @@
 ### A Template Makefile for MacOS & Linux, support clang/clang++ & gcc/g++
 
-CXX = g++
+CXX = clang++
 UNAME_S := $(shell uname -s)
 ifeq ($(UNAME_S),Darwin)
 	CXX = clang++

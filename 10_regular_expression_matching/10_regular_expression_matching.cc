@@ -27,6 +27,7 @@ int main()
   return 0;
 }
 
+// recursive
 bool isMatch(string s, string p)
 {
   const int sSize = s.size();
