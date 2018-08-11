@@ -1,3 +1,19 @@
+/* 
+
+Input
+5 0
+1 2 3
+0 4
+0 4
+0 4
+1 2 3
+
+Output
+4
+
+*/
+
+
 #include <iostream>
 #include <vector>
 #include <string>
@@ -45,33 +61,22 @@ int solve(vector<vector<int> >& v, int id)
 int main()
 {
   int n, id;
-  cin>>n>>id;
+  cin >> n >> id;
   // cout << "n: " << n << "id: " << id << endl;
   cin.get();
   vector<vector<int>> users;
   for(int i=0;i<n;i++)
   {
-    string str;
+    int tmp;
     vector<int> temp;
-    getline(cin, str);
+    cin >> tmp;
+    temp.push_back(tmp);
 
-    stringstream ss;
-    auto index = str.find_first_of(' ');
-    while (index != string::npos){
-      string tmp_str = str.substr(0, index);
-      int tmp;
-      ss.clear();
-      ss << tmp_str;
-      ss >> tmp;
+    while (cin.get() != '\n'){
+      cin >> tmp;
       temp.push_back(tmp);
-      str = str.substr(index + 1, string::npos);
-      index = str.find_first_of(' ');
     }
-    ss.clear();
-    ss << str;
-    int t1;
-    ss >> t1;
-    temp.push_back(t1);
+
     users.push_back(temp);
   }
   int res = solve(users, id);
